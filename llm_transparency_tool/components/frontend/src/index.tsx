@@ -21,7 +21,10 @@ import Selector from "./Selector"
 const LlmViewerComponent = (props: ComponentProps) => {
   switch (props.args['component']) {
     case 'graph':
-      return <ContributionGraph />
+      const divStyle = {
+        overflow: 'scroll',
+      };
+      return (<div style={divStyle}> <ContributionGraph /> </div>)
     case 'selector':
       return <Selector />
     default:

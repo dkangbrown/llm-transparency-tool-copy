@@ -1,0 +1,4 @@
+module load miniconda3/23.11.0s
+source /oscar/runtime/software/external/miniconda3/23.11.0/etc/profile.d/conda.sh
+conda activate llmtt
+streamlit run llm_transparency_tool/server/app.py -- config/local.json

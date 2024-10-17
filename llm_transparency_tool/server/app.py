@@ -564,6 +564,27 @@ class App:
 
         container_graph_left, container_graph_right = container_graph.columns([5, 1])
 
+        scrollable_container_html = """
+                                    <div style="overflow-x: auto; white-space: nowrap;">
+                                        <div style="display: inline-block;">
+                                            <p style="font-size:1.5em;">##### Graph asdfadfasdfsadfadsfsdafdsfdsfasfdfasdfasfsfasfsfd</p>
+                                        </div>
+                                    </div>
+                                    """
+
+        # css='''
+        #     <style>
+        #         section.main>div {
+        #             padding-bottom: 1rem;
+        #         }
+        #         [data-testid="column"]>div>div>div>div>div {
+        #             overflow: auto;
+        #             height: 70vh;
+        #         }
+        #     </style>
+        #     '''
+
+        # container_graph_left.markdown(scrollable_container_html, unsafe_allow_html=True)
         container_graph_left.write('##### Graph')
         heads_placeholder = container_graph_right.empty()
         heads_placeholder.write('##### Blocks')
@@ -577,12 +598,18 @@ class App:
 
         try:
 
+            # scrollable_container_html = """
+            #     <div style="overflow-x: auto; white-space: nowrap;">
+            #     """
+            # st.markdown(scrollable_container_html, unsafe_allow_html=True)
+
             if self.sentence is None:
                 return
 
             with container_graph_left:
                 selection = self.draw_graph(self._contribution_threshold if not self._renormalize_after_threshold else 0.0)
-
+            
+            # selection = None
             if selection is None:
                 return
 

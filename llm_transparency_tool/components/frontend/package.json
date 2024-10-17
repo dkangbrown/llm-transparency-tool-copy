@@ -32,8 +32,8 @@
     "@types/node": "^20.11.17",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
-    "eslint-config-react-app": "^7.0.1",
     "react-scripts": "^5.0.1",
-    "typescript": "^5.3.3"
+    "typescript": "3.9.7",
+    "webpack": "^5.95.0"
   }
 }
